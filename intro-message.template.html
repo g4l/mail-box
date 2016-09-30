@@ -1,0 +1,19 @@
+<div class="intro-message" ng-hide="hide" ng-click="showFull = true">
+  <div class="col-md-1 col-sm-1 col-xs-2 intro-message__buttons">
+    <strong ng-click="hide = true; $event.stopPropagation();" class="intro-message__delete"></strong>
+  </div>
+  <div class="col-md-2 col-sm-2 col-xs-10 intro-message__from">{{message.fromName}}</div>
+  <div class="col-md-8 col-sm-8 col-xs-12 intro-message__theme-intro"><strong>{{message.theme}}</strong> {{message.text}}</div>
+  <div class="col-md-1 col-sm-1 col-xs-12 intro-message__date">{{message.shortDate}}</div>
+</div>
+<div class="full-message" ng-if="showFull">
+  <div class="full-message__content">
+    <strong class="full-message__close" ng-click="$parent.showFull = false">Закрыть</strong>
+    <h2>{{message.theme}}</h2>
+    <strong>От: {{message.fromName}} &lt;{{message.fromEmail}}&gt;</strong><br>
+    <strong>Кому: {{message.to}}</strong><br>
+    <em>{{message.fullDate}}</em>
+    <hr />
+    <div>{{message.text}}</div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app='mailBox'>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>MailBox</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://code.angularjs.org/1.5.8/angular.js"></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>MailBox</h2>
+    <div class="row" message-data>
+      <intro ng-repeat="message in messages"></intro>
+    </div>
+  </div>
+
+  <script>
+    angular.module('mailBox', []);
+    
+    angular.module('mailBox')
+    .directive('intro', () => {
+      return {
+        restrict: 'E',
+        templateUrl: 'intro-message.template.html',
+        link: function(scope) {}
+      }
+    })
+    .directive('messageData', () => {
+      return {
+        restrict: 'A',
+        link: scope => {
+          scope.messages = [
+            {
+              "id": 1,
+              "fromName": "Gabe newell",
+              "fromEmail": "gaben@valve.com",
+              "to": "test@angular.js",
+              "theme": "Steam Guard Mobile Authenticator added",
+              "text": `A Steam Guard Mobile Authenticator has been successfully added to your account.
+                        If you did not perform this action, please follow the link below to lock your account and submit
+                         a request for assistance. Lorem ipsum cursus, gravida eros tellus — pharetra integer nibh
+                         lectus tempus. Lorem mauris vitae quisque nec — metus eget maecenas ligula sodales eu nec
+                         justo: ligula ut leo auctor. Duis lorem nulla sagittis leo mauris sem molestie donec ornare
+                         porttitor duis ut orci commodo. Metus diam sit et eros sit sagittis orci ut ultricies sodales,
+                         congue — adipiscing diam porta gravida arcu quam, pellentesque lorem ipsum in sodales. Proin,
+                         adipiscing mauris nam molestie odio, ornare, porta donec sapien leo eget, donec, risus
+                         sagittis a, sed et elementum. Ultricies molestie ut enim nibh arcu, nec integer lorem morbi
+                         mauris commodo. Nec, nam donec at sapien congue massa commodo massa tellus urna nulla
+                         adipiscing, nec. Ornare sodales et in malesuada justo elementum sodales: bibendum nam,
+                         sit vivamus, quam, sed lectus ut maecenas vivamus ligula. Eros, ipsum elementum ligula
+                         maecenas, non, vitae ornare sagittis quisque maecenas enim ornare non eget fusce orci
+                         urna bibendum vivamus lorem rutrum.`,
+              "fullDate": "30.09.2016 21:25",
+              "shortDate": "30 сен"
+            },
+            {
+              "id": 2,
+              "fromName": "Azure Team",
+              "fromEmail": "AzureTeam@e-mail.microsoft.com",
+              "to": "test@angular.js",
+              "theme": "Changes to Azure App Service plans for direct customers",
+              "text": `Effective November 1, 2016, Azure Logic Apps actions will no longer be included in Azure App
+                        Service plans for direct customers—you’ll need to purchase Logic Apps on a standalone basis.
+                        Note that Enterprise Agreement (EA) customers will continue to receive included quantities of
+                        Logic Apps actions when they purchase App Service plans.
+                        For more information about pricing, please visit the Logic Apps Pricing webpage.
+                        Note: As an Azure customer, you are receiving this email because we are required to notify
+                        you of all pricing changes. This is the only communication that you will receive directly
+                        from Microsoft regarding these pricing changes. `,
+              "fullDate": "01.10.2016 12:15",
+              "shortDate": "01 окт"
+            },
+            {
+              "id": 3,
+              "fromName": "MS Imagine",
+              "fromEmail": "MSImagine@e-mail.microsoft.com",
+              "to": "test@angular.js",
+              "theme": "Сегодня DreamSpark превращается в Microsoft Imagine",
+              "text": `Здравствуйте, Александр,
+                      Сегодня DreamSpark превращается в Microsoft Imagine. Для Вас как для учащегося DreamSpark
+                      или участника программы Imagine Cup это важное изменение. Программа DreamSpark упраздняется,
+                      но Вам по-прежнему будут доступны все преимущества — теперь в рамках новой программы
+                      Microsoft Imagine. Чтобы сохранить доступ к бесплатным инструментам, программному обеспечению,
+                      учебным онлайн-курсам и конкурсам, например Imagine Cup, в рамках новой программы Microsoft
+                      Imagine, Вам потребуется создать новый профиль учащегося. Создав профиль Microsoft Imagine,
+                      Вы сможете совершенно бесплатно исследовать, изучать и творить с помощью технологий Microsoft,
+                      таких как Azure, а также пользоваться учебными курсами и участвовать в конкурсах.
+                      С уважением, команда разработчиков Microsoft Imagine `,
+              "fullDate": "02.10.2016 23:01",
+              "shortDate": "02 окт"
+            }
+          ];
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

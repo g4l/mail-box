@@ -1,0 +1,64 @@
+.intro-message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.intro-message__buttons {
+  text-align: center;
+}
+
+.intro-message__from {
+  font-weight: bold;
+}
+
+.intro-message__theme-intro {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.intro-message__date {
+  text-align: right;
+}
+
+.intro-message__delete {
+  color: #f00;
+  border: 2px solid #ff0000;
+  border-radius: 90px;
+  padding: 0 4px;
+}
+
+.intro-message__delete::after {
+  content: "x";
+}
+
+.full-message {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+}
+
+.full-message__content {
+  width: 90%;
+  position: relative;
+  margin: 5% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.full-message__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
