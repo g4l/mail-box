@@ -13,7 +13,7 @@
   <div class="container">
     <h2>MailBox</h2>
     <div class="row" message-data>
-      <intro ng-repeat="message in messages"></intro>
+      <message ng-repeat="message in messages"></message>
     </div>
   </div>
 
@@ -21,10 +21,10 @@
     angular.module('mailBox', []);
     
     angular.module('mailBox')
-    .directive('intro', () => {
+    .directive('message', () => {
       return {
         restrict: 'E',
-        templateUrl: 'intro-message.template.html',
+        templateUrl: 'message.template.html',
         link: function(scope) {}
       }
     })
